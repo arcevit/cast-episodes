@@ -4,7 +4,7 @@ import shallow from 'zustand/shallow';
 import { TCast, TPage } from '../util/types';
 import Card from '../components/Card';
 import { filterCast } from '../handler';
-const CAST_URL = 'https://api.tvmaze.com/shows/143?embed=cast';
+export const CAST_URL = 'https://api.tvmaze.com/shows/143?embed=cast';
 
 const Cast: FunctionComponent = () => {
     const cast = useStore((state) => state.cast, shallow);

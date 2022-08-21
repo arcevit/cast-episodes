@@ -3,7 +3,7 @@ import shallow from 'zustand/shallow';
 import EpisodeCard from '../components/EpisodeCard';
 import { useStore } from '../store/store';
 import { TEpisode, TPage } from '../util/types';
-const EPISODES_URL = 'https://api.tvmaze.com/shows/143/episodes?specials=1';
+export const EPISODES_URL = 'https://api.tvmaze.com/shows/143/episodes?specials=1';
 
 const Episodes: FunctionComponent = () => {
     const episodes = useStore((state) => state.episodes, shallow);
