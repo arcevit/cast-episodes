@@ -17,12 +17,12 @@
     margin: 0 auto;
     padding-top: 50px;
     max-width: 80vw;
-	padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 /* btn style */
 
-.btn{
+.btn {
     border: none;
     cursor: pointer;
     font-size: 20px;
@@ -30,7 +30,7 @@
     height: var(--height);
     width: 210px;
     line-height: 23.5px;
-	text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .btn.btn-primary {
@@ -43,9 +43,9 @@
     color: black;
 }
 
- /* nav-bar */
+/* nav-bar */
 
- .nav-bar-container {
+.nav-bar-container {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -54,7 +54,173 @@
     padding-bottom: 20px;
 }
 
- .logo {
+.logo {
     margin-bottom: -22px;
 }
 
+/* filter bar */
+
+.filter-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* search input */
+
+.search-container {
+    align-items: center;
+    border: 1px solid var(--lightGrey);
+    display: flex;
+    position: relative;
+    width: 424px;
+}
+
+.search-input {
+    width: 100%;
+    height: var(--height);
+    border: none;
+    outline: 0;
+    background: none;
+}
+.search-input::placeholder {
+    color: var(--lightGrey);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17.5;
+    padding-left: 5px;
+}
+
+.magGlass-wrapper {
+    border: none;
+    display: flex;
+    left: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.2rem;
+}
+
+/* action menu */
+
+.action-menu-container {
+    position: relative;
+}
+
+.btn-filter {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background: #fefefe;
+    gap: 10px;
+}
+
+.btn-filter > span {
+    font-size: 13px;
+    font-weight: 400px;
+}
+
+.btn-filter.open {
+    box-shadow: 0 0 0 0.5px var(--lightGrey);
+}
+
+.action-menu-container > span {
+    position: absolute;
+    width: 95px;
+    right: 0;
+    height: 2px;
+    background: #fefefe;
+    z-index: 3;
+}
+
+.action-menu-body {
+    display: none;
+    position: absolute;
+    width: 230px;
+    box-shadow: 0 0 0 0.5px var(--lightGrey);
+    background: #fefefe;
+    z-index: 1;
+    right: 0px;
+    top: 27px;
+    padding-bottom: 10px;
+}
+
+.action-menu-container:hover > .action-menu-body {
+    display: block;
+}
+
+.action-menu-title {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.action-menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+.inline-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.btn-update-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.input-sm {
+    width: 170px;
+    height: var(--height);
+    border: 1px solid var(--lightGrey);
+}
+
+.text-sm {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* checkbox */
+
+input[type='checkbox'] {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    color: black;
+    border: 1px solid var(--lightGrey);
+    appearance: none;
+    -webkit-appearance: none;
+    outline: 0;
+    cursor: pointer;
+    border-color: var(--lightGrey);
+    background: var(--lightGrey);
+    vertical-align: middle;
+}
+
+input[type='checkbox']::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0px;
+    left: 4px;
+    width: 4px;
+    height: 10px;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+input[type='checkbox']:checked {
+    color: white;
+    border-color: var(--secondary);
+    background: var(--secondary);
+}
+input[type='checkbox']:checked::before {
+    opacity: 1;
+}
