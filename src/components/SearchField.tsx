@@ -1,11 +1,13 @@
-import React, {FunctionComponent, useRef } from 'react';
+import React, { FunctionComponent, useRef } from 'react';
 import { ReactComponent as MagGlass } from '../icons/MagGlass.svg';
+import { useStore } from '../store/store';
 interface Prop {
     placeholder: string;
 }
 
 const SearchField: FunctionComponent<Prop> = ({ placeholder }) => {
-    const inputRef = useRef<HTMLInputElement|  null>(null);
+    const filter = useStore((state) => state.filter);
+    const setFilter = useStore((state) => state.setFilter);
 
     return (
         <div className='search-container'>
@@ -15,10 +17,9 @@ const SearchField: FunctionComponent<Prop> = ({ placeholder }) => {
             <input
                 className='search-input'
                 placeholder={placeholder}
-                onChange={(evt) => {}}
-                ref={inputRef}
+                onChange={(evt) => setFilter(evt.target.value)}
                 type='text'
-                value={'hello'}
+                value={filter}
             />
         </div>
     );

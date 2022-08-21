@@ -85,7 +85,7 @@
     outline: 0;
     background: none;
 }
-.search-input::placeholder {
+.search-input::placeholder, .input-sm::placeholder {
     color: var(--lightGrey);
     font-size: 15px;
     font-weight: 400;
@@ -184,7 +184,6 @@
     font-weight: 400;
 }
 
-
 /* checkbox */
 
 input[type='checkbox'] {
@@ -223,4 +222,82 @@ input[type='checkbox']:checked {
 }
 input[type='checkbox']:checked::before {
     opacity: 1;
+}
+
+/* pages and card  */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+.card {
+    background: white;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 180px;
+}
+
+.card-header {
+    overflow: hidden;
+    position: relative;
+}
+
+.card-header > img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    max-height: 180px;
+    object-position: center;
+}
+
+.card-img-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 23px;
+    line-height: 23px;
+    text-align: start;
+    font-size: 12px;
+    color: white;
+    background: var(--secondary);
+    padding-left: 8px;
+}
+
+.card-badge {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+}
+
+.card-body {
+    padding: 8px;
+}
+
+.card-body-item {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+/* episode card */
+.episode-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+.episode-card {
+    background: white;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 280px;
 }
